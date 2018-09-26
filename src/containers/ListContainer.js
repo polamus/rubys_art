@@ -11,6 +11,8 @@ import {
 
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
+import ScrollableAnchor from 'react-scrollable-anchor'
+import {style} from "../components/Style.css"
 
 const images = [
   './1.jpg',
@@ -37,13 +39,7 @@ const items = [
     src: './2.jpg',
     altText: 'Sangeeth',
     caption: 'Sangeeth'
-  },
-  {
-    id: 4,
-    src: './3.jpg',
-    altText: 'Bridal',
-    caption: 'Bridal'
-  },
+  }
 ];
 
 export default class UploadFilesContainer extends Component {
@@ -128,7 +124,7 @@ export default class UploadFilesContainer extends Component {
     });
 
     return (
-      <div>
+      <div id= 'main'>
       <br/><br/>
       <div>
         <h1 className= 'text-center'>Rubys Henna</h1>
@@ -157,20 +153,9 @@ export default class UploadFilesContainer extends Component {
         </div>
         <br/>
         <div className=' text-center'>
-         <Button color="primary" onClick={this.toggle}>About</Button>{' '} 
           <Button color="primary" onClick={() => this.setState({ isOpen: true })}>
           My Work
         </Button> { '  '}
-         <Button color="primary" onClick={this.toggle1}>Contact</Button>{' '} 
-
-          <Fade in={this.state.fadeIn} tag="h5" className="mt-3">
-                I'm the Henna artist in Bay Area
-          </Fade>
-
-          <Fade in={this.state.fadeIn1} tag="h5" className="mt-3">
-                Contact: 925-222-2222
-                Email:   rubyart31@gail.com
-          </Fade>
 
 
         </div> 
@@ -192,6 +177,34 @@ export default class UploadFilesContainer extends Component {
             }
           />
         )}
+
+        <div>
+        <div  className='text-center'>
+          <a href='#section1'> About </a>
+          <a href='#section2'> Contact </a>
+        </div>
+        <ScrollableAnchor id={'section1'}>
+                   <div style={{height: '1000px'}}>
+              <div id ='a'>
+               About
+              </div>
+              <div id = 'b'>
+                Hey there, I'm Nikitha and I'm a henna artist
+              </div> 
+          </div>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'section2'}>
+          <div style={{height: '1000px'}}>
+              <div id ='a'>
+               Contact
+              </div>
+              <div id = 'b'>
+                Contact: 925-222-2222
+                Email:   rubyart31@gail.com
+              </div> 
+          </div>
+        </ScrollableAnchor>
+      </div>
                                           
       </div>
     );

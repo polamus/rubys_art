@@ -1,0 +1,60 @@
+Arguments: 
+  /Users/satish/.nvm/versions/node/v9.3.0/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js install
+
+PATH: 
+  /usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/Users/satish/.rvm/gems/ruby-2.4.0/bin:/Users/satish/.rvm/gems/ruby-2.4.0@global/bin:/Users/satish/.rvm/rubies/ruby-2.4.0/bin:/Users/satish/.rbenv/bin:/Users/satish/.nvm/versions/node/v9.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/satish/.rvm/bin:/Users/satish/.yarn/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  9.3.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "banner",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "/",
+    "dependencies": {
+      "availity-reactstrap-validation": "^1.4.3",
+      "bootstrap": "4.0.0-alpha.6",
+      "fuzzy": "^0.1.3",
+      "lodash.debounce": "^4.0.8",
+      "match-sorter": "^1.8.1",
+      "react": "^15.3.0",
+      "react-bootstrap-table": "^4.0.6",
+      "react-bs-table": "^2.3.7",
+      "react-dom": "^15.3.1",
+      "react-md": "^1.2.8",
+      "react-scripts": "1.0.14",
+      "react-select": "^1.0.0-rc.10",
+      "react-strap": "^0.0.1",
+      "react-table": "^6.5.3",
+      "react-transition-group": "^1.1.2",
+      "react-virtualized-select": "^3.1.0",
+      "reactstrap": "^4.8.0",
+      "sm_shared": "^1.0.7",
+      "whatwg-fetch": "^2.0.3"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+      at errnoException (dns.js:55:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:26)

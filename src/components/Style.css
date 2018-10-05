@@ -52,3 +52,12 @@
     font-family: "Comic Sans MS";
 }
 
+#about-contact{
+    position: fixed;
+    top: 10px;
+    bottom: 10px;
+    right: 0px;
+    overflow-y: scroll;
+
+}
+

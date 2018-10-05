@@ -20,30 +20,14 @@ import 'react-image-lightbox/style.css'; // This only needs to be imported once 
 import ScrollableAnchor from 'react-scrollable-anchor'
 import {style} from "../components/Style.css"
 import 'font-awesome/css/font-awesome.min.css'
+import birthdays from "../consts/birthdays";
+import bridal from "../consts/bridal";
+
+import parties from "../consts/parties";
+
+import corporate from "../consts/corporate";
 
 
-
-
-const items = [
-  {
-    id: 1,
-    src: './1.jpg',
-    altText: "Ruby's Henna Art",
-    caption: "Ruby's Henna Art"
-  },
-  {
-    id: 2,
-    src: './1.jpg',
-    altText: 'Birthdays',
-    caption: 'Birthday'
-  },
-  {
-    id: 3,
-    src: './2.jpg',
-    altText: 'Sangeeth',
-    caption: 'Sangeeth'
-  }
-];
 
 
 const divStyle1 = {
@@ -56,18 +40,20 @@ export default class UploadFilesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0,  photoIndex: 0,
-      isOpen: false, fadeIn: false, fadeIn1: false, openWork: false, images: [
-  './1.jpg',
-  './2.jpg',
-  './3.jpg',
-] };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
+      isOpen: false, fadeIn: false, fadeIn1: false, openWork: false, images: []};
+    this.bridalNext = this.bridalNext.bind(this);
+    this.bridalPrevious = this.bridalPrevious.bind(this);
+    this.birthdayNext = this.birthdayNext.bind(this);
+    this.birthdayPrevious = this.birthdayPrevious.bind(this);
+    this.partyNext = this.partyNext.bind(this);
+    this.partyPrevious = this.partyPrevious.bind(this);
+    this.corporateNext = this.corporateNext.bind(this);
+    this.corporatePrevious = this.corporatePrevious.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
-     this.toggle = this.toggle.bind(this);
-     this.toggle1 = this.toggle1.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.toggle1 = this.toggle1.bind(this);
    
   }
 
@@ -81,15 +67,51 @@ export default class UploadFilesContainer extends Component {
     this.animating = false;
   }
 
-  next() {
+  bridalNext() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    const nextIndex = this.state.activeIndex === bridal.length - 1 ? 0 : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
   }
 
-  previous() {
+  bridalPrevious() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    const nextIndex = this.state.activeIndex === 0 ? bridal.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  birthdayNext() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === birthdays.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  birthdayPrevious() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? birthdays.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  partyNext() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === parties.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  partyPrevious() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? parties.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  corporateNext() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === corporate.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  corporatePrevious() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? corporate.length - 1 : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
   }
 
@@ -127,7 +149,60 @@ export default class UploadFilesContainer extends Component {
      const { photoIndex, isOpen } = this.state;
      var classN = 'fa fa-facebook fa-clickable'
 
-    const slides = items.map((item) => {
+
+
+    const bridalslides = bridal.map((item) => {
+      return (
+        <CarouselItem
+          className="custom-tag"
+          tag="div"
+          key={item.id}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+        >
+
+
+          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
+          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+
+    const partyslides = parties.map((item) => {
+      return (
+        <CarouselItem
+          className="custom-tag"
+          tag="div"
+          key={item.id}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+        >
+
+
+          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
+          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+    
+    const birthdayslides = birthdays.map((item) => {
+      return (
+        <CarouselItem
+          className="custom-tag"
+          tag="div"
+          key={item.id}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+        >
+
+
+          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
+          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+        
+    const corporateslides = corporate.map((item) => {
       return (
         <CarouselItem
           className="custom-tag"
@@ -149,14 +224,18 @@ export default class UploadFilesContainer extends Component {
            <div>
            <Row>
            <Col>
+           <div>
             <font face="Arial">Ruby's Henna Art</font>
+           </div>
            </Col>
-          <Col className='text-right'>
+          <Col >
+          <div id = 'about-contact'>
              <a href='#section1'> About </a> &nbsp;
              <a href='#section2'> Contact </a> &nbsp;
              <a href='#section3'> My Work </a> &nbsp;
+             <a href='#section4'> What is Henna </a> &nbsp;
              <i className= {classN} title="Facebook"></i>
-
+          </div>
           </Col>   
           </Row>
 
@@ -193,7 +272,9 @@ export default class UploadFilesContainer extends Component {
             <div style={{height: '300px'}}>
                   <h2 id='line'><span>About</span></h2>
                   <br/>
-                 <p id='about-text' className='text-center'> <font face="Courier">"A recognized henna and facepainting artist"</font>  </p>       
+                 <p id='about-text' className='text-center'> <font face="Courier">"A recognized henna and facepainting artist"</font>  </p> 
+                 <p id='about-text' className='text-center'> <font face="Courier">"More to Come"</font>  </p>       
+      
              </div>
         </ScrollableAnchor>
         <ScrollableAnchor id={'section2'}>
@@ -201,7 +282,7 @@ export default class UploadFilesContainer extends Component {
                   <h2 id='line'><span>Contact</span></h2>
                   <br/>
                  <p id='about-text' className='text-center'> <font face="Courier">"Email: rubyart31@gmail.com"</font>  </p>   
-                 <p id='about-text' className='text-center'> <font face="Courier">"Phone: 000-000-0000"</font>  </p>       
+                 <p id='about-text' className='text-center'> <font face="Courier">"Phone: 925-302-9107"</font>  </p>       
     
              </div>
         </ScrollableAnchor>
@@ -212,41 +293,102 @@ export default class UploadFilesContainer extends Component {
              <br/>
               <Row>
                 <Col sm="6">
-                  <CardImg top width="100%" src="./main.jpg" alt="Card image cap" />
-                  <Card body>
-                    <CardTitle>Bridal</CardTitle>
-                    <Button onClick={() => this.setState({ isOpen: true })}>Gallery</Button>
+                  <style>
+                            {
+                              `.custom-tag {
+                                  max-width: 100%;
+                                  padding-left: 100px;
+                                  max-height: 500px;
+                                }`
+                            }
+                          </style>
+                          <Carousel
+                            activeIndex={activeIndex}
+                            next={this.next}
+                            previous={this.previous}
+                          >
+                            <CarouselIndicators items={bridal} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                            {bridalslides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.bridalPrevious} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.bridalNext} />
+                    </Carousel>              
+            <Card body>
+                    <Button onClick={() => this.setState({ isOpen: true, images: bridal.map((s) => s.src) })}>Bridal</Button>
                   </Card>
                 </Col>
                 <Col sm="6">
-                  <CardImg top width="100%" src="./main1.jpg" alt="Card image cap" />
-                  <Card body>
-                    <CardTitle>Birthday</CardTitle>
-                    <Button onClick={() => this.setState({ isOpen: true })}>Gallery</Button>
+                          <Carousel
+                            activeIndex={activeIndex}
+                            next={this.next}
+                            previous={this.previous}
+                          >
+                            <CarouselIndicators items={birthdays} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                            {birthdayslides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.birthdayPrevious} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.birthdayNext} />
+                    </Carousel>                      <Card body>
+                    <Button onClick={() => this.setState({ isOpen: true , images: birthdays.map((s)=> s.src)})}>Birthday</Button>
                   </Card>
                 </Col>
                 </Row>
                 <br/>
                 <Row>
                 <Col sm="6">
-                  <CardImg top width="100%" src="./2.jpg" alt="Card image cap" />
-                  <Card body>
-                    <CardTitle>Sangeeth</CardTitle>
-                    <Button onClick={() => this.setState({ isOpen: true })}>Gallery</Button>
+
+                          <Carousel
+                            activeIndex={activeIndex}
+                            next={this.next}
+                            previous={this.previous}
+                          >
+                            <CarouselIndicators items={parties} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                            {partyslides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.partyPrevious} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.partyNext} />
+                    </Carousel>                      <Card body>
+                    <Button onClick={() => this.setState({ isOpen: true, images: parties.map((s) => s.src)})}>Parties</Button>
                   </Card>
                 </Col>
                 <Col sm="6">
-                  <CardImg top width="100%" src="./1.jpg" alt="Card image cap" />
-                  <Card body>
-                    <CardTitle>Corporate Events</CardTitle>
-                    <Button onClick={() => this.setState({ isOpen: true })}>Gallery</Button>
+
+                          <Carousel
+                            activeIndex={activeIndex}
+                            next={this.next}
+                            previous={this.previous}
+                          >
+                            <CarouselIndicators items={corporate} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                            {corporateslides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.corporatePrevious} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.corporateNext} />
+                    </Carousel>                      <Card body>
+                                       <Button  onClick={() => this.setState({ isOpen: true, images: corporate.map((s) => s.src) })}>Corporate Events</Button>
+
                   </Card>
+
                 </Col>
               </Row>
           </div>
 
         </ScrollableAnchor>
+        <br/><br/>
+
+        <ScrollableAnchor id={'section4'}>
+          <div style={{height: '300px'}}>
+                  <h2 id='line'><span>What is Henna</span></h2>
+                  <br/>
+                 <p id='about-text' className='text-center'> <font face="Courier">Henna is a small flowering shrub. Henna leaves are dried and turned into a fine powder. That powder can be used to dye hair or skin temporarily.
+
+Henna body art has been used to adorn women's bodies in a variety of ceremonies for thousands of years. It's still used in many wedding ceremonies among various cultures. 
+
+</font>  </p>   
+    
+             </div>
+        </ScrollableAnchor>
       </div>
+
+
+
+
+
                                           
       </div>
     );

@@ -26,11 +26,8 @@ const birthdays = [
     id: 1,
     src: './images/birthday/32.jpeg',
 
-  },{
-    id: 1,
-    src: './images/birthday/33.jpeg',
-
-  },{
+  },
+  {
     id: 1,
     src: './images/birthday/34.jpeg',
 

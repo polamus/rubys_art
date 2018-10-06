@@ -39,11 +39,6 @@ const parties = [
   },
   {
     id: 1,
-    src: './images/parties/13.jpeg',
-
-  },
-  {
-    id: 1,
     src: './images/parties/8.jpeg',
 
   },

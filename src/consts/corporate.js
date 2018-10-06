@@ -2,11 +2,7 @@
 
 
 const corporate = [
- {
-    id: 1,
-    src: './images/corporate/1.jpeg',
 
-  },
   {
     id: 1,
     src: './images/corporate/2.jpeg',
@@ -28,10 +24,6 @@ const corporate = [
   },{
     id: 1,
     src: './images/corporate/37.jpeg',
-
-  },{
-    id: 1,
-    src: './images/corporate/65.jpeg',
 
   },{
     id: 1,

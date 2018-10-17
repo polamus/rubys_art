@@ -222,7 +222,7 @@ export default class UploadFilesContainer extends Component {
            <Row>
            <Col>
            <div>
-            <font>Ruby's Henna Art</font>
+            <font>Queena's Henna</font>
            </div>
            </Col>
           <Col >

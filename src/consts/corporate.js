@@ -9,44 +9,44 @@ const corporate = [
 
   },
   {
-    id: 1,
+    id: 2,
     src: './images/corporate/25.jpeg',
 
   },
   {
-    id: 1,
+    id: 3,
     src: './images/corporate/26.jpeg',
 
   },{
-    id: 1,
+    id: 4,
     src: './images/corporate/36.jpeg',
 
   },{
-    id: 1,
+    id: 5,
     src: './images/corporate/37.jpeg',
 
   },{
-    id: 1,
+    id: 6,
     src: './images/corporate/66.jpeg',
 
   },{
-    id: 1,
+    id: 7,
     src: './images/corporate/67.jpeg',
 
   },{
-    id: 1,
+    id: 8,
     src: './images/corporate/68.jpeg',
 
   },{
-    id: 1,
+    id: 9,
     src: './images/corporate/69.jpeg',
 
   },{
-    id: 1,
+    id: 10,
     src: './images/corporate/70.jpeg',
 
   },{
-    id: 1,
+    id: 11,
     src: './images/corporate/71.jpeg',
 
   }

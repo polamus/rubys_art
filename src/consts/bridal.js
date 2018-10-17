@@ -14,37 +14,37 @@ const bridal = [
 
   },
   {
-    id: 2,
+    id: 3,
     src: './images/bridal/58.jpeg',
 
   },
   {
-    id: 2,
+    id: 4,
     src: './images/bridal/59.jpeg',
 
   },
   {
-    id: 2,
+    id: 5,
     src: './images/bridal/60.jpeg',
 
   },
   {
-    id: 2,
+    id: 6,
     src: './images/bridal/61.jpeg',
 
   },
   {
-    id: 2,
+    id: 7,
     src: './images/bridal/62.jpeg',
 
   },
   {
-    id: 2,
+    id: 8,
     src: './images/bridal/63.jpeg',
 
   },
   {
-    id: 2,
+    id: 9,
     src: './images/bridal/64.jpeg',
 
   }

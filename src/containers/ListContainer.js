@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   Button, 
-  Fade,
   Carousel,
   CarouselItem,
   CarouselControl,
@@ -10,9 +9,7 @@ import {
   Jumbotron,
   Row,
   Col,
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle,
-  Text
+  Card
 } from 'reactstrap';
 
 import Lightbox from 'react-image-lightbox';
@@ -31,7 +28,7 @@ import corporate from "../consts/corporate";
 
 
 const divStyle1 = {
-  backgroundImage: 'url(' + './main3.jpg' + ')',
+  backgroundImage: ['url(', './main3.jpg', ')'].join(' '),
   height: '600px'
 };
 
@@ -159,11 +156,11 @@ export default class UploadFilesContainer extends Component {
           key={item.id}
           onExiting={this.onExiting}
           onExited={this.onExited}
+          src={item.src}
         >
 
 
-          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
-          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption className="text-default" captionText="" captionHeader="" />
         </CarouselItem>
       );
     });
@@ -176,11 +173,11 @@ export default class UploadFilesContainer extends Component {
           key={item.id}
           onExiting={this.onExiting}
           onExited={this.onExited}
+          src={item.src}
         >
 
 
-          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
-          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption className="text-default" captionText="" captionHeader=""  />
         </CarouselItem>
       );
     });
@@ -193,11 +190,11 @@ export default class UploadFilesContainer extends Component {
           key={item.id}
           onExiting={this.onExiting}
           onExited={this.onExited}
+          src={item.src}
         >
 
 
-          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
-          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption className="text-default" captionText="" captionHeader="" />
         </CarouselItem>
       );
     });
@@ -210,11 +207,11 @@ export default class UploadFilesContainer extends Component {
           key={item.id}
           onExiting={this.onExiting}
           onExited={this.onExited}
+          src={item.src}
         >
 
 
-          <img  className= "custom-tag" src={item.src} alt={item.altText}  />
-          <CarouselCaption className="text-default" captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption className="text-default" captionText="" captionHeader="" />
         </CarouselItem>
       );
     });
@@ -225,7 +222,7 @@ export default class UploadFilesContainer extends Component {
            <Row>
            <Col>
            <div>
-            <font face="Arial">Ruby's Henna Art</font>
+            <font>Ruby's Henna Art</font>
            </div>
            </Col>
           <Col >
@@ -272,8 +269,8 @@ export default class UploadFilesContainer extends Component {
             <div style={{height: '300px'}}>
                   <h2 id='line'><span>About</span></h2>
                   <br/>
-                 <p id='about-text' className='text-center'> <font face="Courier">"A recognized henna and facepainting artist"</font>  </p> 
-                 <p id='about-text' className='text-center'> <font face="Courier">"More to Come"</font>  </p>       
+                 <p id='about-text' className='text-center'> <font >"A recognized henna and facepainting artist"</font>  </p> 
+                 <p id='about-text' className='text-center'> <font >"More to Come"</font>  </p>       
       
              </div>
         </ScrollableAnchor>
@@ -281,8 +278,8 @@ export default class UploadFilesContainer extends Component {
           <div style={{height: '300px'}}>
                   <h2 id='line'><span>Contact</span></h2>
                   <br/>
-                 <p id='about-text' className='text-center'> <font face="Courier">"Email: rubyart31@gmail.com"</font>  </p>   
-                 <p id='about-text' className='text-center'> <font face="Courier">"Phone: 925-302-9107"</font>  </p>       
+                 <p id='about-text' className='text-center'> <font>"Email: rubyart31@gmail.com"</font>  </p>   
+                 <p id='about-text' className='text-center'> <font>"Phone: 925-302-9107"</font>  </p>       
     
              </div>
         </ScrollableAnchor>
@@ -304,8 +301,8 @@ export default class UploadFilesContainer extends Component {
                           </style>
                           <Carousel
                             activeIndex={activeIndex}
-                            next={this.next}
-                            previous={this.previous}
+                            next={this.bridalNext}
+                            previous={this.bridalPrevious}
                           >
                             <CarouselIndicators items={bridal} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {bridalslides}
@@ -319,8 +316,8 @@ export default class UploadFilesContainer extends Component {
                 <Col sm="6">
                           <Carousel
                             activeIndex={activeIndex}
-                            next={this.next}
-                            previous={this.previous}
+                            next={this.birthdayNext}
+                            previous={this.birthdayPrevious}
                           >
                             <CarouselIndicators items={birthdays} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {birthdayslides}
@@ -337,8 +334,8 @@ export default class UploadFilesContainer extends Component {
 
                           <Carousel
                             activeIndex={activeIndex}
-                            next={this.next}
-                            previous={this.previous}
+                            next={this.partyNext}
+                            previous={this.partyPrevious}
                           >
                             <CarouselIndicators items={parties} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {partyslides}
@@ -352,8 +349,8 @@ export default class UploadFilesContainer extends Component {
 
                           <Carousel
                             activeIndex={activeIndex}
-                            next={this.next}
-                            previous={this.previous}
+                            next={this.corporateNext}
+                            previous={this.corporatePrevious}
                           >
                             <CarouselIndicators items={corporate} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {corporateslides}
@@ -375,7 +372,7 @@ export default class UploadFilesContainer extends Component {
           <div style={{height: '300px'}}>
                   <h2 id='line'><span>What is Henna</span></h2>
                   <br/>
-                 <p id='about-text' className='text-center'> <font face="Courier">Henna is a small flowering shrub. Henna leaves are dried and turned into a fine powder. That powder can be used to dye hair or skin temporarily.
+                 <p id='about-text' className='text-center'> <font >Henna is a small flowering shrub. Henna leaves are dried and turned into a fine powder. That powder can be used to dye hair or skin temporarily.
 
 Henna body art has been used to adorn women's bodies in a variety of ceremonies for thousands of years. It's still used in many wedding ceremonies among various cultures. 
 
